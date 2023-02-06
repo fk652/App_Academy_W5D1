@@ -35,12 +35,18 @@ class IntSet
   end
 
   def insert(num)
+    index = num % @store.length
+    @store[index] << num
   end
 
   def remove(num)
+    index = num % @store.length 
+    @store[index].delete(num)
   end
 
   def include?(num)
+    index = num % @store.length
+    @store[index].include?(num)
   end
 
   private
